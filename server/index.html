@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-*" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let socket = new WebSocket('ws://localhost:3600/chat')
+      console.log('Attempting web socket connection')
+      socket.onopen = () => {
+        console.log('connected successfully')
+      }
+      //   socket.onclose = event => {
+      //     console.log('Socket connection closed :', event)
+      //   }
+      socket.onerror = error => {
+        console.log(error)
+      }
+      socket.onmessage = msg => {
+        console.log(msg.data)
+      }
+    </script>
+  </body>
+</html>
