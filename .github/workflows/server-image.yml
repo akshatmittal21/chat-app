@@ -3,7 +3,7 @@ name: Docker push to repo
 on:
   push:
     branches:
-      - master
+      - Master
 
 jobs:
   build-image:
